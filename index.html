@@ -97,22 +97,313 @@
   </div>
 </section>
 
-<!-- <section class="section">
+<section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-      <td>
-        <br>
-        <div class="columns is-centered has-text-centered">
-          <img src="static/images/teaser_video.gif" style="width: 100%;" alt="teaser">
-        </div>
-      </td>
+      <div class="column is-four-fifths">
+        <img src="./static/images/teaser.gif" style="width: 100%; border-radius: 10px;" alt="MDF++ teaser">
+      </div>
     </div>
   </div>
-</section> -->
+</section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recently, world-action models (WAMs) have emerged as a powerful framework for robot manipulation. By jointly modeling action generation and future observation prediction, WAMs can act and anticipate the outcomes of the actions. However, existing WAMs typically rely on frozen pretrained encoders trained with reconstruction, which may not produce representations well suited for robot control.
+          </p>
+          <p>
+            In this paper, we tackle the problem of learning physically-grounded, control-relevant representations for WAMs. We propose MDF++, a visuo-tactile world-action model that learns latent representations of multisensory observations end-to-end with a diffusion backbone. While naive joint training can lead to feature collapse, MDF++ introduces a multi-task learning strategy that leverages cross-modal correlations to learn task-relevant representations. We evaluate MDF++ on a suite of contact-rich manipulation tasks, including real-world bolt screwing and nut mating, and show that it outperforms WAMs built on frozen pretrained representations by up to 50%.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Uncut Policy Rollout on Bolt Screwing</h2>
+        <video controls preload="metadata" style="width: 100%; height: auto; border-radius: 10px;">
+          <source src="./static/videos/uncut_bolt_screw_web.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
 
+<section class="section">
+  <div class="container is-max-desktop video-results-container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">MDF++ enables precise contact-rich manipulation in real-world</h2>
+        <div class="content">
+          <p style="text-align: justify;">
+            We evaluate MDF++ on a Franka Research 3 robot with a WSG-50 gripper on two real-world contact-rich threading tasks on a car engine: Bolt Screwing and Nut Mating. The evaluation uses 20 trials per policy-task pair, with training data collected from 300 Bolt Screwing demonstrations and 255 Nut Mating demonstrations using a UMI equipped with GelSight sensors.
+          </p>
+        </div>
 
+        <h3 class="title is-4" style="margin-top: 1.5rem;">Bolt Screwing</h3>
+        <div class="columns is-centered" style="margin-top: 0.75rem;">
+          <div class="column is-half">
+            <video controls preload="metadata" aria-label="MDF bolt screwing trial 7" style="width: 100%; height: auto; border-radius: 10px;">
+              <source src="./static/videos/engine_bolt_screwing_trial_7_mmdf_blur.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-half">
+            <video controls preload="metadata" aria-label="MDF bolt screwing trial 16" style="width: 100%; height: auto; border-radius: 10px;">
+              <source src="./static/videos/engine_bolt_screwing_trial_16_mmdf_blur.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="columns is-centered" style="margin-top: 1rem;">
+          <div class="column is-half">
+            <video controls preload="metadata" aria-label="MDF bolt screwing trial 11" style="width: 100%; height: auto; border-radius: 10px;">
+              <source src="./static/videos/engine_bolt_screwing_trial_11_mmdf_blur.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-half">
+            <video controls preload="metadata" aria-label="MDF bolt screwing trial 13" style="width: 100%; height: auto; border-radius: 10px;">
+              <source src="./static/videos/engine_bolt_screwing_trial_13_mmdf_blur.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <h3 class="title is-4" style="margin-top: 2rem;">Nut Mating</h3>
+        <div class="columns is-centered" style="margin-top: 0.75rem;">
+          <div class="column is-half">
+            <video controls preload="metadata" aria-label="MDF nut mating trial 10" style="width: 100%; height: auto; border-radius: 10px;">
+              <source src="./static/videos/engine_nut_mating_trial_10_mmdf.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-half">
+            <video controls preload="metadata" aria-label="MDF nut mating trial 1" style="width: 100%; height: auto; border-radius: 10px;">
+              <source src="./static/videos/engine_nut_mating_trial_1_mmdf.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="columns is-centered" style="margin-top: 1rem;">
+          <div class="column is-half">
+            <video controls preload="metadata" aria-label="MDF nut mating trial 5" style="width: 100%; height: auto; border-radius: 10px;">
+              <source src="./static/videos/engine_nut_mating_trial_5_mmdf.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-half">
+            <video controls preload="metadata" aria-label="MDF nut mating trial 13" style="width: 100%; height: auto; border-radius: 10px;">
+              <source src="./static/videos/engine_nut_mating_trial_13_mmdf.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop video-results-container">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Physical Experiments</h2>
+        <div class="content">
+          <ul>
+            <li>MDF++ achieves the highest real-world scores on both tasks, reaching 95.0 on Bolt Screwing and 83.0 on Nut Mating.</li>
+            <li>The results indicate that end-to-end, control-relevant multisensory representations outperform frozen visual representations and pixel-space WAM prediction in precise contact-rich manipulation.</li>
+          </ul>
+        </div>
+
+        <div class="has-text-centered">
+          <img src="./static/images/real_results.png" style="width: 80%; height: auto; border-radius: 10px; margin-top: 1rem;" alt="Real-world physical experiment results">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop video-results-container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Pixel-space world modeling with a frozen encoder (UWM) compared to MDF++.</h2>
+
+        <h3 class="title is-4" style="margin-top: 1.5rem;">Bolt Screwing</h3>
+        <div class="columns is-centered" style="margin-bottom: 0.5rem;">
+          <div class="column is-half">
+            <p class="has-text-weight-semibold">MDF++</p>
+          </div>
+          <div class="column is-half">
+            <p class="has-text-weight-semibold">UWM</p>
+          </div>
+        </div>
+        <div class="columns is-centered" style="margin-top: 0.75rem;">
+          <div class="column is-half">
+            <video controls preload="metadata" style="width: 100%; height: auto; border-radius: 10px;">
+              <source src="./static/videos/engine_bolt_screwing_trial_1_mmdf_blur.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-half">
+            <video controls preload="metadata" style="width: 100%; height: auto; border-radius: 10px;">
+              <source src="./static/videos/engine_bolt_screwing_trial_1_uwm_blur.mp4" type="video/mp4">
+            </video>
+            <p style="margin-top: 0.35rem; font-size: 0.95rem; color: #555;">Misaligns and fails to recover.</p>
+          </div>
+        </div>
+        <div class="columns is-centered" style="margin-top: 1rem;">
+          <div class="column is-half">
+            <video controls preload="metadata" style="width: 100%; height: auto; border-radius: 10px;">
+              <source src="./static/videos/engine_bolt_screwing_trial_16_mmdf_blur.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-half">
+            <video controls preload="metadata" style="width: 100%; height: auto; border-radius: 10px;">
+              <source src="./static/videos/engine_bolt_screwing_trial_16_uwm_blur.mp4" type="video/mp4">
+            </video>
+            <p style="margin-top: 0.35rem; font-size: 0.95rem; color: #555;">Inserted but not engaged.</p>
+          </div>
+        </div>
+        <h3 class="title is-4" style="margin-top: 2rem;">Nut Mating</h3>
+        <div class="columns is-centered" style="margin-bottom: 0.5rem;">
+          <div class="column is-half">
+            <p class="has-text-weight-semibold">MDF++</p>
+          </div>
+          <div class="column is-half">
+            <p class="has-text-weight-semibold">UWM</p>
+          </div>
+        </div>
+        <div class="columns is-centered" style="margin-top: 0.75rem;">
+          <div class="column is-half">
+            <video controls preload="metadata" style="width: 100%; height: auto; border-radius: 10px;">
+              <source src="./static/videos/engine_nut_mating_trial_4_mmdf.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-half">
+            <video controls preload="metadata" style="width: 100%; height: auto; border-radius: 10px;">
+              <source src="./static/videos/engine_nut_mating_trial_4_1_uwm.mp4" type="video/mp4">
+            </video>
+            <p style="margin-top: 0.35rem; font-size: 0.95rem; color: #555;">Falls off after gripper release.</p>
+          </div>
+        </div>
+        <div class="columns is-centered" style="margin-top: 1rem;">
+          <div class="column is-half">
+            <video controls preload="metadata" style="width: 100%; height: auto; border-radius: 10px;">
+              <source src="./static/videos/engine_nut_mating_trial_11_mmdf.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-half">
+            <video controls preload="metadata" style="width: 100%; height: auto; border-radius: 10px;">
+              <source src="./static/videos/engine_nut_mating_trial_11_uwm.mp4" type="video/mp4">
+            </video>
+            <p style="margin-top: 0.35rem; font-size: 0.95rem; color: #555;">Not engaged.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop video-results-container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">End-to-end fine-tuned representations (MDF++) compared to MDF++ (frozen encoder).</h2>
+
+        <h3 class="title is-4" style="margin-top: 1.5rem;">Bolt Screwing</h3>
+        <div class="columns is-centered" style="margin-bottom: 0.5rem;">
+          <div class="column is-half">
+            <p class="has-text-weight-semibold">MDF++</p>
+          </div>
+          <div class="column is-half">
+            <p class="has-text-weight-semibold">MDF++ (frozen encoder)</p>
+          </div>
+        </div>
+        <div class="columns is-centered" style="margin-top: 0.75rem;">
+          <div class="column is-half">
+            <video controls preload="metadata" style="width: 100%; height: auto; border-radius: 10px;">
+              <source src="./static/videos/engine_bolt_screwing_trial_3_mmdf_blur.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-half">
+            <video controls preload="metadata" style="width: 100%; height: auto; border-radius: 10px;">
+              <source src="./static/videos/engine_bolt_screwing_trial_3_mmdf_frozen_blur.mp4" type="video/mp4">
+            </video>
+            <p style="margin-top: 0.35rem; font-size: 0.95rem; color: #555;">OOD and stays still.</p>
+          </div>
+        </div>
+        <div class="columns is-centered" style="margin-top: 1rem;">
+          <div class="column is-half">
+            <video controls preload="metadata" style="width: 100%; height: auto; border-radius: 10px;">
+              <source src="./static/videos/engine_bolt_screwing_trial_16_mmdf_blur.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-half">
+            <video controls preload="metadata" style="width: 100%; height: auto; border-radius: 10px;">
+              <source src="./static/videos/engine_bolt_screwing_trial_16_mmdf_frozen_blur.mp4" type="video/mp4">
+            </video>
+            <p style="margin-top: 0.35rem; font-size: 0.95rem; color: #555;">Fails to approach.</p>
+          </div>
+        </div>
+        <h3 class="title is-4" style="margin-top: 2rem;">Nut Mating</h3>
+        <div class="columns is-centered" style="margin-bottom: 0.5rem;">
+          <div class="column is-half">
+            <p class="has-text-weight-semibold">MDF++</p>
+          </div>
+          <div class="column is-half">
+            <p class="has-text-weight-semibold">MDF++ (frozen encoder)</p>
+          </div>
+        </div>
+        <div class="columns is-centered" style="margin-top: 0.75rem;">
+          <div class="column is-half">
+            <video controls preload="metadata" style="width: 100%; height: auto; border-radius: 10px;">
+              <source src="./static/videos/engine_nut_mating_trial_2_mmdf.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-half">
+            <video controls preload="metadata" style="width: 100%; height: auto; border-radius: 10px;">
+              <source src="./static/videos/engine_nut_mating_trial_2_mmdf_frozen.mp4" type="video/mp4">
+            </video>
+            <p style="margin-top: 0.35rem; font-size: 0.95rem; color: #555;">Inserted but not engaged.</p>
+          </div>
+        </div>
+        <div class="columns is-centered" style="margin-top: 1rem;">
+          <div class="column is-half">
+            <video controls preload="metadata" style="width: 100%; height: auto; border-radius: 10px;">
+              <source src="./static/videos/engine_nut_mating_trial_12_mmdf.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-half">
+            <video controls preload="metadata" style="width: 100%; height: auto; border-radius: 10px;">
+              <source src="./static/videos/engine_nut_mating_trial_12_mmdf_frozen.mp4" type="video/mp4">
+            </video>
+            <p style="margin-top: 0.35rem; font-size: 0.95rem; color: #555;">Fails to approach.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop video-results-container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">End-to-end Representation Learning</h2>
+        <img src="./static/images/model_architecture.png" style="width: 100%; height: auto; border-radius: 10px;" alt="MDF++ selective gradient backpropagation architecture">
+        <div class="content" style="margin-top: 1.5rem;">
+          <h3 class="title is-4">Multi-task learning via structured masking</h3>
+          <p style="text-align: justify;">
+            MDF++ represents each training query as a time-modality noise matrix: observed history tokens are given zero noise, while target tokens over the prediction horizon are corrupted and denoised. Instead of relying only on random masks, MDF++ samples five control-relevant patterns with equal probability: policy learning, world-action modeling, forward dynamics, inverse dynamics, and random masking. These structured masks focus the diffusion backbone on conditionals that are directly useful for robot control while still preserving temporal and cross-modal prediction.
+          </p>
+        </div>
+        <img src="./static/images/training_dist.png" style="width: 100%; height: auto; border-radius: 10px; margin-top: 0.5rem;" alt="Structured training query patterns for MDF++">
+      </div>
+    </div>
+  </div>
+</section>
 
 </body>
 </html>

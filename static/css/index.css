@@ -107,6 +107,10 @@ body {
     height: 100%;
 }
 
+.container.video-results-container {
+  max-width: 1440px !important;
+}
+
 .publication-body img {
 }
 
