@@ -82,6 +82,15 @@ body {
   display: inline-block;
 }
 
+.publication-links {
+  margin-top: 1rem;
+}
+
+#bibtex pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
 .publication-banner img {
 }
 
